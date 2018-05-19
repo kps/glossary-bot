@@ -365,6 +365,10 @@ def set_definition_and_get_response(slash_command, command_params, user_name):
 # ROUTES
 #
 
+@app.route('/status', methods=['GET'])
+def status():
+    return 'ok'
+
 @app.route('/', methods=['POST'])
 def index():
     # verify that the request is authorized
