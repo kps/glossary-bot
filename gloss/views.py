@@ -18,7 +18,7 @@ SEARCH_CMDS = ("search",)
 
 ALIAS_KEYWORDS = ("see also", "see")
 
-BOT_NAME = "Gloss Bot"
+BOT_NAME = "Glossary Bot"
 BOT_EMOJI = ":lipstick:"
 
 '''
@@ -40,8 +40,10 @@ def get_payload_values(channel_id="", text=None):
     payload_values = {}
     payload_values['channel'] = channel_id
     payload_values['text'] = text
-    payload_values['username'] = BOT_NAME
-    payload_values['icon_emoji'] = BOT_EMOJI
+    # Uncomment the following two lines if you want app-coded BOTNAME and ICON
+    # Slack integration settings provide defaults for this which are more easily customizable.
+    # payload_values['username'] = BOT_NAME
+    # payload_values['icon_emoji'] = BOT_EMOJI
     return payload_values
 
 def send_webhook_with_attachment(channel_id="", text=None, fallback="", pretext="", title="", color="#f33373", image_url=None, mrkdwn_in=[]):
